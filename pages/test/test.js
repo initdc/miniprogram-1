@@ -6,6 +6,7 @@ Page({
   data: {
     width: 0,
     height: 0,
+    show: false,
   },
 
   /**
@@ -17,8 +18,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    const width = wx.getSystemInfoSync().windowWidth;
-    const height = wx.getSystemInfoSync().windowHeight;
+    const systemInfo = wx.getSystemInfoSync();
+    const width = systemInfo.windowWidth;
+    const height = systemInfo.windowHeight;
     this.setData({
       height: height,
       width: width,
@@ -54,4 +56,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {},
+
+  showOn() {
+    this.setData({ show: true });
+  },
+
+  exit() {
+    this.setData({ show: false });
+    // wx.navigateBack()
+  },
 });
