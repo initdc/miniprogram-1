@@ -1,0 +1,31 @@
+<!--pages/test/test.wxml-->
+<cover-image src="https://cnk.one/favicon.png"></cover-image>
+<cover-view>cover-view</cover-view>
+<match-media min-width="400" max-width="500">
+  <view>当页面宽度在 400 ~ 500 px 之间时展示这里</view>
+</match-media>
+<match-media min-height="400" orientation="portrait">
+  <view>当页面高度不小于 400 px 且屏幕方向为纵向时展示这里</view>
+</match-media>
+<movable-area class="mova-1" style="width: {{width}}px">
+  <movable-view direction="all" inertia="true">move me</movable-view>
+</movable-area>
+<movable-area class="mova-2">
+  <movable-view direction="all" inertia="true">move me</movable-view>
+</movable-area>
+<button type="primary">overlay</button>
+<page-container show="true">
+<share-element>share-element</share-element>
+</page-container>
+  <scroll-view scroll-y="true">
+    <view class="scroll-elem">
+    <text>first</text>
+      <cover-image src="https://cnk.one/favicon.png"></cover-image>
+      <text>second</text>
+
+      <cover-image src="https://cnk.one/favicon.png"></cover-image>
+      <text>third</text>
+
+      <cover-image src="https://cnk.one/favicon.png"></cover-image>
+    </view>
+</scroll-view>
