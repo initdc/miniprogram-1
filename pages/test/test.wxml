@@ -100,7 +100,8 @@
 </view>
 
 <view class="editor-container">
-  <editor placeholder="富文本编辑器" show-img-toolbar="true" show-img-resize="true" show-img-size="true" bindblur="onEditorBlur">
+  <editor placeholder="富文本编辑器" show-img-toolbar="true" show-img-resize="true" show-img-size="true" bindblur="onEditOver" bindinput="onEditOver">
     <rich-text nodes="{{htmlSnip}}"></rich-text> 
   </editor>
+  <button type="primary" bindtap="saveContent">Save</button>
 </view>

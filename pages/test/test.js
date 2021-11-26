@@ -34,6 +34,7 @@ Page({
     show: false,
     htmlSnip,
     nodeSnip,
+    content: "富文本编辑器",
   },
 
   /**
@@ -93,16 +94,26 @@ Page({
     // wx.navigateBack()
   },
 
-  onCheckChange(e){
-    console.log(e.detail.value)
+  onCheckChange(e) {
+    console.log(e.detail.value);
   },
 
-  onEditorBlur(e){
-    let detail = []
+  onEditOver(e) {
+    let detail = [];
 
-    detail = e.detail
-    let {text, html, delta } = detail 
-    console.log(`text: ${text}, html: ${html}`)
-    console.log(delta)
-  }
+    detail = e.detail;
+    let { text, html, delta } = detail;
+    // console.log(`text: ${text}, html: ${html}`);
+    // console.log(delta);
+
+    this.setData({
+      content: text,
+    });
+  },
+
+  saveContent() {
+    this.setData({
+      htmlSnip: this.data.content,
+    });
+  },
 });

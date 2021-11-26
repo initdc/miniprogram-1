@@ -70,11 +70,10 @@ progress:last-child{
 }
 
 .editor-container {
+  height: 250px;
   width: 100%;
-  height: 600px;
-  background-color: lightyellow;
 }
 
 editor {
-  width: 80%;
+  background-color: lightgoldenrodyellow;
 }
