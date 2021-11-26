@@ -6,8 +6,7 @@
 
 .mova-2 {
   height: 200px;
-  display: flex;
-  width: auto;
+  width: 100%;
   background-color: lightcyan;
 }
 
@@ -18,15 +17,49 @@ movable-view {
 }
 
 scroll-view {
-  height: 200px;
+  height: 400px;
   background-color: lightblue;
 }
 
 .scroll-elem {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
   background-color: lightgray;
+}
+
+.scroll-elem image{
+  width: 400px;
+  height: 400px;
 }
 
 share-element {
   height: 200px;
   background-color: lightcyan;
+}
+
+swiper {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+}
+
+swiper-item {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+swiper-item image {
+  width: 400px;
+  height: 400px;
+}
+
+progress {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+progress:last-child{
+  width: 80%;
 }

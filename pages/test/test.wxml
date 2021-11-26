@@ -1,32 +1,91 @@
 <!--pages/test/test.wxml-->
-<cover-image src="https://cnk.one/favicon.png"></cover-image>
-<cover-view>cover-view</cover-view>
-<match-media min-width="400" max-width="500">
-  <view>当页面宽度在 400 ~ 500 px 之间时展示这里</view>
-</match-media>
-<match-media min-height="400" orientation="portrait">
-  <view>当页面高度不小于 400 px 且屏幕方向为纵向时展示这里</view>
-</match-media>
-<movable-area class="mova-1" style="width: {{width}}px">
-  <movable-view direction="all" inertia="true">move me</movable-view>
-</movable-area>
-<movable-area class="mova-2">
-  <movable-view direction="all" inertia="true">move me</movable-view>
-</movable-area>
-<button type="primary" bindtap="showOn">唤出</button>
+<view>
+  <cover-image src="https://cnk.one/favicon.png"></cover-image>
+  <cover-view>cover-view</cover-view>
+  <match-media min-width="400" max-width="500">
+    <view>当页面宽度在 400 ~ 500 px 之间时展示这里</view>
+  </match-media>
+  <match-media min-height="400" orientation="portrait">
+    <view>当页面高度不小于 400 px 且屏幕方向为纵向时展示这里</view>
+  </match-media>
+  <movable-area class="mova-1" style="width: {{width}}px">
+    <movable-view direction="all" inertia="true">move me</movable-view>
+  </movable-area>
+  <movable-area class="mova-2">
+    <movable-view direction="all" inertia="true">move me</movable-view>
+  </movable-area>
+  <button type="primary" bindtap="showOn">唤出</button>
+</view>
+
 <page-container show="{{show}}">
-  <share-element>share-element</share-element>
+  <share-element transform>
+    <text> share-element</text>
+  </share-element>
   <button type="primary" bindtap="exit">关闭</button>
 </page-container>
-<scroll-view scroll-y="true" refresher-enabled="true">
-  <view class="scroll-elem">
-    <text>first</text>
-    <cover-image src="https://cnk.one/favicon.png"></cover-image>
-    <text>second</text>
 
-    <cover-image src="https://cnk.one/favicon.png"></cover-image>
-    <text>third</text>
+<view>
+  <share-element transform>
+    <text> share-element</text>
+  </share-element>
+</view>
+<view>
+  <scroll-view scroll-y="true" refresher-enabled="true">
+    <view class="scroll-elem">
+      <text>first</text>
+      <view>
+        <image src="https://cnk.one/favicon.png"></image>
+      </view>
 
-    <cover-image src="https://cnk.one/favicon.png"></cover-image>
-  </view>
-</scroll-view>
+      <text>second</text>
+      <view>
+        <image src="https://cnk.one/favicon.png"></image>
+      </view>
+      
+      <text>third</text>
+      <view>
+        <image src="https://cnk.one/favicon.png"></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view>
+  <swiper indicator-dots="true">
+    <swiper-item>
+      <image src="https://cnk.one/favicon.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://cnk.one/favicon.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://cnk.one/favicon.png"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view>
+  <icon type="success" size="40"></icon>
+  <icon type="success"></icon>
+  <icon type="success_no_circle"></icon>
+  <icon type="info"></icon>
+  <icon type="info" color="lightblue"></icon>
+  <icon type="warn"></icon>
+  <icon type="waiting"></icon>
+  <icon type="cancel"></icon>
+  <icon type="download"></icon>
+  <icon type="search"></icon>
+  <icon type="clear"></icon>
+</view>
+
+<view>
+  <progress percent="30"></progress>
+  <progress percent="40" show-info></progress>
+  <progress percent="50" stroke-width="2px"></progress>
+  <progress percent="60" active duration="10" border-radius="5px" color="lightblue"></progress>
+</view>
+
+<view>
+  <rich-text nodes="{{htmlSnip}}"></rich-text>
+  <rich-text nodes="{{nodeSnip}}"></rich-text>
+</view>
