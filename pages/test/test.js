@@ -95,5 +95,14 @@ Page({
 
   onCheckChange(e){
     console.log(e.detail.value)
+  },
+
+  onEditorBlur(e){
+    let detail = []
+
+    detail = e.detail
+    let {text, html, delta } = detail 
+    console.log(`text: ${text}, html: ${html}`)
+    console.log(delta)
   }
 });

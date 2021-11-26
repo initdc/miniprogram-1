@@ -17,7 +17,7 @@
   <button type="primary" bindtap="showOn">唤出</button>
 </view>
 
-<page-container show="{{show}}">
+<page-container show="{{show}}" round>
   <share-element transform>
     <text> share-element</text>
   </share-element>
@@ -41,7 +41,7 @@
       <view>
         <image src="https://cnk.one/favicon.png"></image>
       </view>
-      
+
       <text>third</text>
       <view>
         <image src="https://cnk.one/favicon.png"></image>
@@ -91,10 +91,16 @@
 </view>
 
 <view>
-<checkbox-group bindchange="onCheckChange">
-<checkbox value="1">1: ok?</checkbox>
-<checkbox value="2" checked>2: ok?</checkbox>
-<checkbox value="3" disabled>3: ok?</checkbox>
-<checkbox value="4" checked disabled>4: ok?</checkbox>
-</checkbox-group>
+  <checkbox-group bindchange="onCheckChange">
+    <checkbox value="1">1: ok?</checkbox>
+    <checkbox value="2" checked>2: ok?</checkbox>
+    <checkbox value="3" disabled>3: ok?</checkbox>
+    <checkbox value="4" checked disabled>4: ok?</checkbox>
+  </checkbox-group>
+</view>
+
+<view class="editor-container">
+  <editor placeholder="富文本编辑器" show-img-toolbar="true" show-img-resize="true" show-img-size="true" bindblur="onEditorBlur">
+    <rich-text nodes="{{htmlSnip}}"></rich-text> 
+  </editor>
 </view>
