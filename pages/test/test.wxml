@@ -82,10 +82,19 @@
   <progress percent="30"></progress>
   <progress percent="40" show-info></progress>
   <progress percent="50" stroke-width="2px"></progress>
-  <progress percent="60" active duration="10" border-radius="5px" color="lightblue"></progress>
+  <progress percent="60" active duration="10" stroke-width="16px" border-radius="8px" color="lightblue"></progress>
 </view>
 
 <view>
   <rich-text nodes="{{htmlSnip}}"></rich-text>
   <rich-text nodes="{{nodeSnip}}"></rich-text>
+</view>
+
+<view>
+<checkbox-group bindchange="onCheckChange">
+<checkbox value="1">1: ok?</checkbox>
+<checkbox value="2" checked>2: ok?</checkbox>
+<checkbox value="3" disabled>3: ok?</checkbox>
+<checkbox value="4" checked disabled>4: ok?</checkbox>
+</checkbox-group>
 </view>
