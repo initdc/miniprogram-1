@@ -101,7 +101,38 @@
 
 <view class="editor-container">
   <editor placeholder="富文本编辑器" show-img-toolbar="true" show-img-resize="true" show-img-size="true" bindblur="onEditOver" bindinput="onEditOver">
-    <rich-text nodes="{{htmlSnip}}"></rich-text> 
+    <rich-text nodes="{{htmlSnip}}"></rich-text>
   </editor>
   <button type="primary" bindtap="saveContent">Save</button>
+</view>
+
+<view>
+  <checkbox>即时保存</checkbox>
+</view>
+
+<textarea>
+<keyboard-accessory>
+</keyboard-accessory>
+</textarea>
+
+<view>
+  <label>
+    check this label
+    <checkbox>option</checkbox>
+  </label>
+</view>
+
+<view>
+  <label for="opt">
+    check this label for opt
+  </label>
+  <checkbox id="opt">option</checkbox>
+</view>
+
+<view>
+  <label for="opt-2">
+    check this label for opt-2
+  </label>
+  <checkbox id="opt-1">option-1</checkbox>
+  <checkbox id="opt-2">option-2</checkbox>
 </view>

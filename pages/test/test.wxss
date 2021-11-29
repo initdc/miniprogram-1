@@ -77,3 +77,13 @@ progress:last-child{
 editor {
   background-color: lightgoldenrodyellow;
 }
+
+textarea {
+  width: 100%;
+  background-color: lightblue;
+}
+
+keyboard-accessory {
+  width: 60%;
+  background-color: lightgreen;
+}
