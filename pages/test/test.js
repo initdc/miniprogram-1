@@ -42,6 +42,9 @@ Page({
       [1, 2, 3],
       [4, 5, 6],
     ],
+    date: "1900-01-01",
+    time: "00:00",
+    region: ["a", "b", "c"],
   },
 
   /**
@@ -134,6 +137,27 @@ Page({
     console.log(e.detail.value);
     this.setData({
       multiIndex: e.detail.value,
+    });
+  },
+
+  onDateChange(e) {
+    console.log(e.detail.value);
+    this.setData({
+      date: e.detail.value,
+    });
+  },
+
+  onTimeChange(e) {
+    console.log(e.detail.value);
+    this.setData({
+      time: e.detail.value,
+    });
+  },
+
+  onRegionChange(e) {
+    console.log(e.detail.value);
+    this.setData({
+      region: e.detail.value,
     });
   },
 });

@@ -154,3 +154,21 @@
     </view>
   </picker>
 </label>
+
+<label>
+  <picker mode="date" bindchange="onDateChange">
+    <text>choose date: {{date}}</text>
+  </picker>
+</label>
+
+<label>
+  <picker mode="time" bindchange="onTimeChange">
+    <text>choose time: {{time}}</text>
+  </picker>
+</label>
+
+<label>
+  <picker mode="region" value="{{region}}" bindchange="onRegionChange">
+    <text>choose region: {{region}}</text>
+  </picker>
+</label>
