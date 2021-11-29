@@ -35,6 +35,8 @@ Page({
     htmlSnip,
     nodeSnip,
     content: "富文本编辑器",
+    index: 0,
+    array: [1,1,2,3,5]
   },
 
   /**
@@ -116,4 +118,10 @@ Page({
       htmlSnip: this.data.content,
     });
   },
+
+  onPickerChange(e) {
+    this.setData({
+      index: e.detail.value
+    })
+  }
 });

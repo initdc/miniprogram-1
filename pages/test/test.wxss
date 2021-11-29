@@ -28,7 +28,7 @@ scroll-view {
   background-color: lightgray;
 }
 
-.scroll-elem image{
+.scroll-elem image {
   width: 400px;
   height: 400px;
 }
@@ -65,7 +65,7 @@ progress {
   margin-bottom: 10px;
 }
 
-progress:last-child{
+progress:last-child {
   width: 80%;
 }
 

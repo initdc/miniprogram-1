@@ -136,3 +136,20 @@
   <checkbox id="opt-1">option-1</checkbox>
   <checkbox id="opt-2">option-2</checkbox>
 </view>
+<label>
+  picker
+  <picker mode="selector" value="{{index}}" range="{{array}}" bindchange="onPickerChange">
+    <view class="picker">
+      fibonacci[{{index}}] = {{array[index]}}
+    </view>
+  </picker>
+</label>
+
+<view class="section">
+  <view class="section__title">普通选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      fibonacci[{{index}}] = {{array[index]}}
+    </view>
+  </picker>
+</view>
