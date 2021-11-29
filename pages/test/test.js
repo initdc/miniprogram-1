@@ -36,7 +36,12 @@ Page({
     nodeSnip,
     content: "富文本编辑器",
     index: 0,
-    array: [1,1,2,3,5]
+    array: [1, 1, 2, 3, 5],
+    multiIndex: [0, 0],
+    multiArray: [
+      [1, 2, 3],
+      [4, 5, 6],
+    ],
   },
 
   /**
@@ -120,8 +125,15 @@ Page({
   },
 
   onPickerChange(e) {
+    console.log(e.detail.value);
     this.setData({
-      index: e.detail.value
-    })
-  }
+      index: e.detail.value,
+    });
+  },
+  onMultiPickerChange(e) {
+    console.log(e.detail.value);
+    this.setData({
+      multiIndex: e.detail.value,
+    });
+  },
 });

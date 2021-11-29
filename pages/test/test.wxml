@@ -136,6 +136,7 @@
   <checkbox id="opt-1">option-1</checkbox>
   <checkbox id="opt-2">option-2</checkbox>
 </view>
+
 <label>
   picker
   <picker mode="selector" value="{{index}}" range="{{array}}" bindchange="onPickerChange">
@@ -145,11 +146,11 @@
   </picker>
 </label>
 
-<view class="section">
-  <view class="section__title">普通选择器</view>
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+<label>
+  multiPicker
+  <picker mode="multiSelector" value="{{multiIndex}}" range="{{multiArray}}" bindchange="onMultiPickerChange">
     <view class="picker">
-      fibonacci[{{index}}] = {{array[index]}}
+      pick one: {{multiArray[0][multiIndex[0]]}} + {{multiArray[1][multiIndex[1]]}} = {{multiArray[0][multiIndex[0]] + multiArray[1][multiIndex[1]]}}
     </view>
   </picker>
-</view>
+</label>
