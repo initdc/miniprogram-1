@@ -172,3 +172,40 @@
     <text>choose region: {{region}}</text>
   </picker>
 </label>
+
+<label>
+  picker-view picked: {{pickArray[0][pickValue[0]]}}, {{pickArray[1][pickValue[1]]}}, {{pickArray[2][pickValue[2]]}}
+  <picker-view indicator-class="pick-up" value="{{pickValue}}" bindchange="onPickViewChange">
+    <picker-view-column>
+      <view wx:for="{{pickArray[0]}}" wx:key="{{pickArray[0]}}">
+        {{item}}
+      </view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{pickArray[1]}}" wx:key="{{pickArray[1]}}">
+        {{item}}
+      </view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{pickArray[2]}}" wx:key="{{pickArray[2]}}" wx:for-index="idx" wx:for-item="itemName">
+        {{idx}}: {{itemName}}
+      </view>
+    </picker-view-column>
+  </picker-view>
+</label>
+
+<label>
+  <radio checked>爱</radio>
+  <radio disabled>不爱</radio>
+</label>
+
+<label>
+  single select: {{radioValue.key}} : {{radioValue.value}}
+  <radio-group bindchange="onRadioGroupChange">
+    <radio wx:for="{{radioArray}}" wx:for-index="idx" value="{{idx}}">
+      {{item}}
+    </radio>
+  </radio-group>
+</label>

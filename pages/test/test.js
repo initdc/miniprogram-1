@@ -45,6 +45,23 @@ Page({
     date: "1900-01-01",
     time: "00:00",
     region: ["a", "b", "c"],
+    pickArray: [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+    ],
+    pickValue: [0, 0, 0],
+    radioArray: {
+      12: "爱",
+      23: "不",
+      34: "爱",
+      45: "我",
+      56: "?",
+    },
+    radioValue: {
+      key: "key",
+      value: "value",
+    },
   },
 
   /**
@@ -158,6 +175,27 @@ Page({
     console.log(e.detail.value);
     this.setData({
       region: e.detail.value,
+    });
+  },
+
+  onPickViewChange(e) {
+    const val = e.detail.value;
+    console.log(val);
+    this.setData({
+      pickValue: val,
+    });
+  },
+
+  onRadioGroupChange(e) {
+    const val = e.detail.value;
+    console.log(val);
+    let radio = {
+      key: val,
+      value: this.data.radioArray[val],
+    };
+
+    this.setData({
+      radioValue: radio,
     });
   },
 });
