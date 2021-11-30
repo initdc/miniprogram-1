@@ -62,6 +62,7 @@ Page({
       key: "key",
       value: "value",
     },
+    sliderLabel: "客官,来玩啊~",
   },
 
   /**
@@ -197,5 +198,23 @@ Page({
     this.setData({
       radioValue: radio,
     });
+  },
+
+  onSliderChanging(e) {
+    console.log(e.detail.value);
+    this.setData({
+      sliderLabel: "大力啊~啊~",
+    });
+  },
+
+  onSliderChange(e) {
+    this.setData({
+      sliderLabel: "收!",
+    });
+    setTimeout(() => {
+      this.setData({
+        sliderLabel: "客官,快来玩啊~",
+      });
+    }, 500);
   },
 });

@@ -197,7 +197,8 @@
 </label>
 
 <label>
-  <radio checked>爱</radio>
+  <radio>爱</radio>
+  <radio checked>你</radio>
   <radio disabled>不爱</radio>
 </label>
 
@@ -208,4 +209,9 @@
       {{item}}
     </radio>
   </radio-group>
+</label>
+
+<label>
+  <text>{{sliderLabel}}</text>
+  <slider min="11" max="27" step="2" show-value value="13" bindchange="onSliderChange" bindchanging="onSliderChanging"></slider>
 </label>
