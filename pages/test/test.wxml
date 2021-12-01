@@ -110,7 +110,7 @@
   <checkbox>即时保存</checkbox>
 </view>
 
-<textarea>
+<textarea maxlength="255" confirm-type="send">
 <keyboard-accessory>
 </keyboard-accessory>
 </textarea>
