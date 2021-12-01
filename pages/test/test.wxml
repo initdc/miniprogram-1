@@ -215,3 +215,10 @@
   <text>{{sliderLabel}}</text>
   <slider min="11" max="27" step="2" show-value value="13" bindchange="onSliderChange" bindchanging="onSliderChanging"></slider>
 </label>
+
+<label>
+  <view>{{switchValue}}</view>
+  <switch checked="{{switch1}}" bindchange="onSwitch1Change">精诚所至</switch>
+  <switch checked="{{switch2}}" bindchange="onSwitch2Change">金石为开</switch>
+  <switch type="checkbox" disabled>学历</switch>
+</label>

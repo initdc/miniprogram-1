@@ -104,3 +104,7 @@ radio-group {
   display: flex;
   flex-direction: column;
 }
+
+Page {
+  padding-bottom: 200px;
+}

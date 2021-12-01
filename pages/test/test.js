@@ -63,6 +63,9 @@ Page({
       value: "value",
     },
     sliderLabel: "客官,来玩啊~",
+    switchValue: "关",
+    switch1: false,
+    switch2: true,
   },
 
   /**
@@ -114,11 +117,15 @@ Page({
   onShareAppMessage: function () {},
 
   showOn() {
-    this.setData({ show: true });
+    this.setData({
+      show: true,
+    });
   },
 
   exit() {
-    this.setData({ show: false });
+    this.setData({
+      show: false,
+    });
     // wx.navigateBack()
   },
 
@@ -216,5 +223,51 @@ Page({
         sliderLabel: "客官,快来玩啊~",
       });
     }, 500);
+  },
+
+  onSwitch1Change(e) {
+    const val = e.detail.value;
+    if (val) {
+      this.setData({
+        switch1: true,
+      });
+    } else {
+      this.setData({
+        switch1: false,
+      });
+    }
+
+    if (this.data.switch1 && this.data.switch2) {
+      this.setData({
+        switchValue: "开!",
+      });
+    } else {
+      this.setData({
+        switchValue: "休矣",
+      });
+    }
+  },
+
+  onSwitch2Change(e) {
+    const val = e.detail.value;
+    if (val) {
+      this.setData({
+        switch2: true,
+      });
+    } else {
+      this.setData({
+        switch2: false,
+      });
+    }
+
+    if (this.data.switch1 && this.data.switch2) {
+      this.setData({
+        switchValue: "开!",
+      });
+    } else {
+      this.setData({
+        switchValue: "休矣",
+      });
+    }
   },
 });
