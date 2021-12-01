@@ -225,6 +225,18 @@ Page({
     }, 500);
   },
 
+  checkS1nS2() {
+    if (this.data.switch1 && this.data.switch2) {
+      this.setData({
+        switchValue: "开!",
+      });
+    } else {
+      this.setData({
+        switchValue: "休矣",
+      });
+    }
+  },
+
   onSwitch1Change(e) {
     const val = e.detail.value;
     if (val) {
@@ -237,15 +249,7 @@ Page({
       });
     }
 
-    if (this.data.switch1 && this.data.switch2) {
-      this.setData({
-        switchValue: "开!",
-      });
-    } else {
-      this.setData({
-        switchValue: "休矣",
-      });
-    }
+    this.checkS1nS2();
   },
 
   onSwitch2Change(e) {
@@ -260,14 +264,6 @@ Page({
       });
     }
 
-    if (this.data.switch1 && this.data.switch2) {
-      this.setData({
-        switchValue: "开!",
-      });
-    } else {
-      this.setData({
-        switchValue: "休矣",
-      });
-    }
+    this.checkS1nS2();
   },
 });
