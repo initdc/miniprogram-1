@@ -237,33 +237,49 @@ Page({
     }
   },
 
+  checkV1nV2(val1, val2, { setKey, trueValue, falseValue }) {
+    const Data = {};
+    if (val1 && val2) {
+      Data[setKey] = trueValue;
+      this.setData(Data);
+    } else {
+      Data[setKey] = falseValue;
+      this.setData(Data);
+    }
+  },
+
+  ifSet(boolValue, setKey) {
+    const Data = {};
+    if (boolValue) {
+      Data[setKey] = true;
+      this.setData(Data);
+    } else {
+      Data[setKey] = false;
+      this.setData(Data);
+    }
+  },
+
   onSwitch1Change(e) {
     const val = e.detail.value;
-    if (val) {
-      this.setData({
-        switch1: true,
-      });
-    } else {
-      this.setData({
-        switch1: false,
-      });
-    }
 
-    this.checkS1nS2();
+    this.ifSet(val, "switch1");
+
+    this.checkV1nV2(this.data.switch1, this.data.switch2, {
+      setKey: "switchValue",
+      trueValue: "开!",
+      falseValue: "休矣",
+    });
   },
 
   onSwitch2Change(e) {
     const val = e.detail.value;
-    if (val) {
-      this.setData({
-        switch2: true,
-      });
-    } else {
-      this.setData({
-        switch2: false,
-      });
-    }
 
-    this.checkS1nS2();
+    this.ifSet(val, "switch2");
+
+    this.checkV1nV2(this.data.switch1, this.data.switch2, {
+      setKey: "switchValue",
+      trueValue: "开!",
+      falseValue: "也休矣",
+    });
   },
 });
