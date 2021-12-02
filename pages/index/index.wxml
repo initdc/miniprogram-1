@@ -20,5 +20,7 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-  <navigator url="../test/test"><button type="primary">Go to test</button></navigator>
+  <navigator url="../test/test">
+    <button type="primary">Go to test</button>
+  </navigator>
 </view>

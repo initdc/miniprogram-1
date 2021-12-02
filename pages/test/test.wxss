@@ -1,4 +1,8 @@
 /* pages/test/test.wxss */
+Page {
+  padding-bottom: 200px;
+}
+
 .mova-1 {
   height: 200px;
   background-color: lightgray;
@@ -105,6 +109,10 @@ radio-group {
   flex-direction: column;
 }
 
-Page {
-  padding-bottom: 200px;
+audio{ 
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

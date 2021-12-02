@@ -24,6 +24,36 @@ const nodeSnip = [
   },
 ];
 
+function createSong(src, { poster, name, author }) {
+  const obj = {};
+  obj.src = src;
+  obj.poster = poster;
+  obj.name = name;
+  obj.author = author;
+
+  return obj;
+}
+
+const musicList = [];
+musicList[0] = createSong(
+  "https://f002.fib.one/file/backend1/John+Williams-Domenico+Scarlatti:+Sonata+for+Harpsichord+in+E+major%2C+K+380%2BL+23.mp3",
+  {
+    poster:
+      "https://f002.fib.one/file/backend1/John+Williams-The+Ultimate+Guitar+Collection.webp",
+    name: "Domenico Scarlatti: Sonata for Harpsichord in E major, K 380/L 23",
+    author: "John Williams",
+  }
+);
+musicList[1] = createSong(
+  "https://f002.fib.one/file/backend1/John+Williams-Francisco+Ta%CC%81rrega:+Recuerdos+De+La+Alhambra.mp3",
+  {
+    poster:
+      "https://f002.fib.one/file/backend1/John+Williams-The+Ultimate+Guitar+Collection.webp",
+    name: "Francisco Tárrega: Recuerdos De La Alhambra",
+    author: "John Williams",
+  }
+);
+
 Page({
   /**
    * 页面的初始数据
@@ -66,6 +96,8 @@ Page({
     switchValue: "关",
     switch1: false,
     switch2: true,
+    musicList,
+    playing: 0,
   },
 
   /**
@@ -280,6 +312,27 @@ Page({
       setKey: "switchValue",
       trueValue: "开!",
       falseValue: "也休矣",
+    });
+  },
+  play(){
+  },
+
+  playNext() {},
+
+  playPrevious() {},
+
+  pausePlay() {},
+
+  stopPlay() {},
+
+  playPoint(e) {},
+
+  onChangePlaying(e) {
+    const val = e.detail.value;
+    console.log(val);
+
+    this.setData({
+      playing: val,
     });
   },
 });

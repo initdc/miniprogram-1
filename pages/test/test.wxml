@@ -189,8 +189,8 @@
     </picker-view-column>
 
     <picker-view-column>
-      <view wx:for="{{pickArray[2]}}" wx:key="{{pickArray[2]}}" wx:for-index="idx" wx:for-item="itemName">
-        {{idx}}: {{itemName}}
+      <view wx:for="{{pickArray[2]}}" wx:key="{{pickArray[2]}}" wx:for-index="idx1" wx:for-item="itemName">
+        {{idx1}}: {{itemName}}
       </view>
     </picker-view-column>
   </picker-view>
@@ -205,7 +205,7 @@
 <label>
   single select: {{radioValue.key}} : {{radioValue.value}}
   <radio-group bindchange="onRadioGroupChange">
-    <radio wx:for="{{radioArray}}" wx:for-index="idx" value="{{idx}}">
+    <radio wx:for="{{radioArray}}" wx:for-index="idx2" value="{{idx2}}">
       {{item}}
     </radio>
   </radio-group>
@@ -222,3 +222,20 @@
   <switch checked="{{switch2}}" bindchange="onSwitch2Change">金石为开</switch>
   <switch type="checkbox" disabled>学历</switch>
 </label>
+
+<functional-page-navigator version="develop">
+  functional-page-navigator without name
+</functional-page-navigator>
+
+<navigator target="self" url="../index/index" open-type="navigateBack">
+  <button type="primary">退出</button>
+</navigator>
+
+<audio src="{{musicList[playing].src}}" controls="true" poster="{{musicList[playing].poster}}" name="{{musicList[playing].name}}" author="{{musicList[playing].author}}"></audio>
+
+<radio-group class="music-list" bindchange="onChangePlaying">
+  <view wx:for="{{musicList}}" wx:for-index="idx3">
+    <radio value="{{idx3}}"></radio>
+    {{idx3+1}}. {{item.author}} - {{item.name}}
+  </view>
+</radio-group>
