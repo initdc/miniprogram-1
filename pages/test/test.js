@@ -35,6 +35,7 @@ function createSong(src, { poster, name, author }) {
 }
 
 const musicList = [];
+
 musicList[0] = createSong(
   "https://f002.fib.one/file/backend1/John+Williams-Domenico+Scarlatti:+Sonata+for+Harpsichord+in+E+major%2C+K+380%2BL+23.mp3",
   {
@@ -44,6 +45,7 @@ musicList[0] = createSong(
     author: "John Williams",
   }
 );
+
 musicList[1] = createSong(
   "https://f002.fib.one/file/backend1/John+Williams-Francisco+Ta%CC%81rrega:+Recuerdos+De+La+Alhambra.mp3",
   {
@@ -54,10 +56,38 @@ musicList[1] = createSong(
   }
 );
 
+musicList[2] = createSong(
+  "https://f002.fib.one/file/backend1/John+Williams-Gabriel+Faure%CC%81:+Pavane.mp3",
+  {
+    poster:
+      "https://f002.fib.one/file/backend1/John+Williams-The+Ultimate+Guitar+Collection.webp",
+    name: "Gabriel Fauré: Pavane",
+    author: "John Williams",
+  }
+);
+
+musicList[3] = createSong(
+  "https://f002.fib.one/file/backend1/John+Williams-Traditional:+Romance+for+Guitar.mp3",
+  {
+    poster:
+      "https://f002.fib.one/file/backend1/John+Williams-The+Ultimate+Guitar+Collection.webp",
+    name: "Traditional: Romance for Guitar",
+    author: "John Williams",
+  }
+);
+
+let playing = 0;
+let listLength = musicList.length;
+
+const innerAudioContext = wx.createInnerAudioContext();
+innerAudioContext.autoplay = false;
+innerAudioContext.src = musicList[playing].src;
+
 Page({
   /**
    * 页面的初始数据
    */
+  innerAudioContext,
   data: {
     width: 0,
     height: 0,
@@ -97,7 +127,10 @@ Page({
     switch1: false,
     switch2: true,
     musicList,
-    playing: 0,
+    listLength,
+    playing,
+    playStatus: "Play",
+    volume: 1.0,
   },
 
   /**
@@ -116,6 +149,7 @@ Page({
       height: height,
       width: width,
     });
+    console.log(innerAudioContext);
   },
 
   /**
@@ -314,16 +348,79 @@ Page({
       falseValue: "也休矣",
     });
   },
-  play(){
+  mute() {
+    this.innerAudioContext.volume = 0;
+    this.setData({
+      volume: 0,
+    });
   },
 
-  playNext() {},
+  onVolumeChange(e) {
+    const val = e.detail.value;
 
-  playPrevious() {},
+    this.innerAudioContext.volume = val;
+    this.setData({
+      volume: val,
+    });
+  },
 
-  pausePlay() {},
+  play() {
+    if (this.data.playStatus === "Play") {
+      this.innerAudioContext.play();
+      this.setData({
+        playStatus: "Pause",
+      });
+    } else {
+      this.innerAudioContext.pause();
+      this.setData({
+        playStatus: "Play",
+      });
+    }
+  },
+  playNext() {
+    let val = this.data.playing + 1;
+    if (val < 0 || val > this.data.listLength - 1) {
+      val = this.data.listLength - 1;
+    }
 
-  stopPlay() {},
+    console.log(val);
+
+    this.setData({
+      playing: val,
+    });
+
+    this.innerAudioContext.src = this.data.musicList[val].src;
+    this.innerAudioContext.play();
+    this.setData({
+      playStatus: "Pause",
+    });
+  },
+
+  playPrevious() {
+    let val = this.data.playing - 1;
+    if (val < 0 || val > this.data.listLength - 1) {
+      val = 0;
+    }
+
+    console.log(val);
+
+    this.setData({
+      playing: val,
+    });
+
+    this.innerAudioContext.src = this.data.musicList[val].src;
+    this.innerAudioContext.play();
+    this.setData({
+      playStatus: "Pause",
+    });
+  },
+
+  stopPlay() {
+    this.innerAudioContext.stop();
+    this.setData({
+      playStatus: "Play",
+    });
+  },
 
   playPoint(e) {},
 
@@ -333,6 +430,11 @@ Page({
 
     this.setData({
       playing: val,
+    });
+    this.innerAudioContext.src = this.data.musicList[val].src;
+    this.innerAudioContext.play();
+    this.setData({
+      playStatus: "Pause",
     });
   },
 });

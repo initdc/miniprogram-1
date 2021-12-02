@@ -231,8 +231,25 @@
   <button type="primary">退出</button>
 </navigator>
 
-<audio src="{{musicList[playing].src}}" controls="true" poster="{{musicList[playing].poster}}" name="{{musicList[playing].name}}" author="{{musicList[playing].author}}"></audio>
+<label>
+  UI audio 控件
+<audio id="audioPlayer1" src="{{musicList[playing].src}}" controls="true" poster="{{musicList[playing].poster}}" name="{{musicList[playing].name}}" author="{{musicList[playing].author}}"></audio>
+</label>
 
+<text>innerAudioContext 实例</text>
+<view id="audioPlayer2">
+  <button bindtap="mute">Mute</button>
+  <button bindtap="playPrevious">Prev</button>
+  <button type="primary" bindtap="play">{{playStatus}}</button>
+  <button bindtap="playNext">Next</button>
+  <button bindtap="stopPlay">Stop</button>
+</view>
+<label>
+  <text>音量</text>
+  <slider min="0.0" max="1.0" step="0.1" show-value value="{{volume}}" bindchange="onVolumeChange"></slider>
+</label>
+
+<text>共同的列表</text>
 <radio-group class="music-list" bindchange="onChangePlaying">
   <view wx:for="{{musicList}}" wx:for-index="idx3">
     <radio value="{{idx3}}"></radio>
