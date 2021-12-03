@@ -134,12 +134,16 @@ Page({
     volume: 1.0,
     songLength: 0,
     songPoint: 0,
+    src: "",
+    videoSrc: "",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    this.ctx = wx.createCameraContext();
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -463,6 +467,34 @@ Page({
     this.innerAudioContext.play();
     this.setData({
       playStatus: "Pause",
+    });
+  },
+
+  takePhoto() {
+    this.ctx.takePhoto({
+      quality: "high",
+      success: (res) => {
+        this.setData({
+          src: res.tempImagePath,
+        });
+      },
+    });
+  },
+  startRecord() {
+    this.ctx.startRecord({
+      success: (res) => {
+        console.log("startRecord");
+      },
+    });
+  },
+  stopRecord() {
+    this.ctx.stopRecord({
+      success: (res) => {
+        this.setData({
+          src: res.tempThumbPath,
+          videoSrc: res.tempVideoPath,
+        });
+      },
     });
   },
 });

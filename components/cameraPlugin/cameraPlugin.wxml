@@ -1,0 +1,17 @@
+<!--components/cameraPlugin/cameraPlugin.wxml-->
+<view>
+  <camera mode="normal" device-position="back" flash="off"></camera>
+  <view>
+    <slider min="0" max="100" value="" step="1"></slider>
+  </view>
+  <view class="camera-btn-group">
+    <button type="primary" bindtap="takePhoto">拍照</button>
+    <button>切换</button>
+    <button type="primary" bindtap="startRecord" style="background-color:  red;">录像</button>
+    <button bindtap="stopRecord" style="background-color: gray;">停止</button>
+  </view>
+  <view>
+    <image src="{{src}}" mode="aspectFit"> </image>
+    <video src="{{videoSrc}}"></video>
+  </view>
+</view>

@@ -124,3 +124,14 @@ audio {
 radio {
   padding-left: 10px;
 }
+
+camera {
+  width: 100%;
+  height: 300px;
+}
+
+.camera-btn-group {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
