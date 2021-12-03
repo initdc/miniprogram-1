@@ -82,6 +82,7 @@ let listLength = musicList.length;
 const innerAudioContext = wx.createInnerAudioContext();
 innerAudioContext.autoplay = false;
 innerAudioContext.src = musicList[playing].src;
+// console.log(innerAudioContext);
 
 Page({
   /**
@@ -131,6 +132,8 @@ Page({
     playing,
     playStatus: "Play",
     volume: 1.0,
+    songLength: 0,
+    songPoint: 0,
   },
 
   /**
@@ -149,7 +152,25 @@ Page({
       height: height,
       width: width,
     });
-    console.log(innerAudioContext);
+
+    this.innerAudioContext.onCanplay(() => {
+      this.innerAudioContext.duration;
+      setTimeout(() => {
+        this.setData({
+          songLength: Math.floor(this.innerAudioContext.duration),
+        });
+      }, 0);
+    });
+
+    this.innerAudioContext.onPlay(() => {
+      // this.innerAudioContext.duration;
+      setInterval(() => {
+        // console.log(Math.floor(this.innerAudioContext.currentTime));
+        this.setData({
+          songPoint: Math.floor(this.innerAudioContext.currentTime),
+        });
+      }, 1000);
+    });
   },
 
   /**
@@ -422,7 +443,13 @@ Page({
     });
   },
 
-  playPoint(e) {},
+  playPoint(e) {
+    const val = e.detail.value;
+    this.innerAudioContext.seek(val);
+    this.setData({
+      songPoint: val,
+    });
+  },
 
   onChangePlaying(e) {
     const val = e.detail.value;

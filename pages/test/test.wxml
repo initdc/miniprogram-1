@@ -236,6 +236,12 @@
 <audio id="audioPlayer1" src="{{musicList[playing].src}}" controls="true" poster="{{musicList[playing].poster}}" name="{{musicList[playing].name}}" author="{{musicList[playing].author}}"></audio>
 </label>
 
+
+<label>
+  <text>进度条</text>
+  <slider min="0" max="{{songLength}}" step="1" show-value value="{{songPoint}}" bindchange="playPoint"></slider>
+</label>
+
 <text>innerAudioContext 实例</text>
 <view id="audioPlayer2">
   <button bindtap="mute">Mute</button>
@@ -244,6 +250,7 @@
   <button bindtap="playNext">Next</button>
   <button bindtap="stopPlay">Stop</button>
 </view>
+
 <label>
   <text>音量</text>
   <slider min="0.0" max="1.0" step="0.1" show-value value="{{volume}}" bindchange="onVolumeChange"></slider>
@@ -251,8 +258,12 @@
 
 <text>共同的列表</text>
 <radio-group class="music-list" bindchange="onChangePlaying">
-  <view wx:for="{{musicList}}" wx:for-index="idx3">
+  <label wx:for="{{musicList}}" wx:for-index="idx3">
     <radio value="{{idx3}}"></radio>
     {{idx3+1}}. {{item.author}} - {{item.name}}
-  </view>
+  </label>
 </radio-group>
+
+<label>
+  <camera></camera>
+</label>
