@@ -440,6 +440,7 @@ Page({
     this.innerAudioContext.stop();
     this.setData({
       playStatus: "Play",
+      songPoint: 0,
     });
   },
 

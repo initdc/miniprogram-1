@@ -137,43 +137,43 @@
   <checkbox id="opt-2">option-2</checkbox>
 </view>
 
-<label>
+<view>
   picker
   <picker mode="selector" value="{{index}}" range="{{array}}" bindchange="onPickerChange">
     <view class="picker">
       fibonacci[{{index}}] = {{array[index]}}
     </view>
   </picker>
-</label>
+</view>
 
-<label>
+<view>
   multiPicker
   <picker mode="multiSelector" value="{{multiIndex}}" range="{{multiArray}}" bindchange="onMultiPickerChange">
     <view class="picker">
       pick one: {{multiArray[0][multiIndex[0]]}} + {{multiArray[1][multiIndex[1]]}} = {{multiArray[0][multiIndex[0]] + multiArray[1][multiIndex[1]]}}
     </view>
   </picker>
-</label>
+</view>
 
-<label>
+<view>
   <picker mode="date" bindchange="onDateChange">
     <text>choose date: {{date}}</text>
   </picker>
-</label>
+</view>
 
-<label>
+<view>
   <picker mode="time" bindchange="onTimeChange">
     <text>choose time: {{time}}</text>
   </picker>
-</label>
+</view>
 
-<label>
+<view>
   <picker mode="region" value="{{region}}" bindchange="onRegionChange">
     <text>choose region: {{region}}</text>
   </picker>
-</label>
+</view>
 
-<label>
+<view>
   picker-view picked: {{pickArray[0][pickValue[0]]}}, {{pickArray[1][pickValue[1]]}}, {{pickArray[2][pickValue[2]]}}
   <picker-view indicator-class="pick-up" value="{{pickValue}}" bindchange="onPickViewChange">
     <picker-view-column>
@@ -194,34 +194,34 @@
       </view>
     </picker-view-column>
   </picker-view>
-</label>
+</view>
 
-<label>
+<view>
   <radio>爱</radio>
   <radio checked>你</radio>
   <radio disabled>不爱</radio>
-</label>
+</view>
 
-<label>
+<view>
   single select: {{radioValue.key}} : {{radioValue.value}}
   <radio-group bindchange="onRadioGroupChange">
     <radio wx:for="{{radioArray}}" wx:for-index="idx2" value="{{idx2}}">
       {{item}}
     </radio>
   </radio-group>
-</label>
+</view>
 
-<label>
+<view>
   <text>{{sliderLabel}}</text>
   <slider min="11" max="27" step="2" show-value value="13" bindchange="onSliderChange" bindchanging="onSliderChanging"></slider>
-</label>
+</view>
 
-<label>
+<view>
   <view>{{switchValue}}</view>
   <switch checked="{{switch1}}" bindchange="onSwitch1Change">精诚所至</switch>
   <switch checked="{{switch2}}" bindchange="onSwitch2Change">金石为开</switch>
   <switch type="checkbox" disabled>学历</switch>
-</label>
+</view>
 
 <functional-page-navigator version="develop">
   functional-page-navigator without name
@@ -231,18 +231,18 @@
   <button type="primary">退出</button>
 </navigator>
 
-<label>
+<view>
   UI audio 控件
-<audio id="audioPlayer1" src="{{musicList[playing].src}}" controls="true" poster="{{musicList[playing].poster}}" name="{{musicList[playing].name}}" author="{{musicList[playing].author}}"></audio>
-</label>
+  <audio id="audioPlayer1" src="{{musicList[playing].src}}" controls="true" poster="{{musicList[playing].poster}}" name="{{musicList[playing].name}}" author="{{musicList[playing].author}}"></audio>
+</view>
 
 
-<label>
-  <text>进度条</text>
+<view>
+  <view>进度条</view>
   <slider min="0" max="{{songLength}}" step="1" show-value value="{{songPoint}}" bindchange="playPoint"></slider>
-</label>
+</view>
 
-<text>innerAudioContext 实例</text>
+<view>innerAudioContext 实例</view>
 <view id="audioPlayer2">
   <button bindtap="mute">Mute</button>
   <button bindtap="playPrevious">Prev</button>
@@ -251,10 +251,10 @@
   <button bindtap="stopPlay">Stop</button>
 </view>
 
-<label>
-  <text>音量</text>
+<view>
+  <view>音量</view>
   <slider min="0.0" max="1.0" step="0.1" show-value value="{{volume}}" bindchange="onVolumeChange"></slider>
-</label>
+</view>
 
 <text>共同的列表</text>
 <radio-group class="music-list" bindchange="onChangePlaying">

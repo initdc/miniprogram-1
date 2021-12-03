@@ -109,7 +109,7 @@ radio-group {
   flex-direction: column;
 }
 
-audio{ 
+audio {
   padding-left: 3%;
   padding-right: 3%;
   padding-top: 10px;
