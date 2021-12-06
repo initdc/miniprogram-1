@@ -227,8 +227,8 @@
   <switch type="checkbox" disabled>学历</switch>
 </view>
 
-<functional-page-navigator version="develop">
-  functional-page-navigator without name
+<functional-page-navigator name="loginAndGetUserInfo" args="" version="develop" bind:success="">
+  <button>登录到插件</button>
 </functional-page-navigator>
 
 <navigator target="self" url="../index/index" open-type="navigateBack">

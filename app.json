@@ -13,5 +13,20 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "functionalPages": {
+    "independent": true
+  },
+  "requiredBackgroundModes": ["audio", "location"],
+  "resizable": true,
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  },
+  "darkmode": true
 }
