@@ -1,0 +1,5 @@
+<!--pages/webView/webView.wxml-->
+<page-meta background-color-top="#00ff00" background-color-bottom="#0000ff">
+  <navigation-bar color-animation-duration="2000"></navigation-bar>
+</page-meta>
+<web-view src="https://moz.one"></web-view>

@@ -23,4 +23,8 @@
   <navigator url="../test/test">
     <button type="primary">Go to test</button>
   </navigator>
+
+  <navigator url="../webView/webView">
+    <button>Go to moz.one</button>
+  </navigator>
 </view>

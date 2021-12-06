@@ -1,4 +1,8 @@
 <!--pages/test/test.wxml-->
+<page-meta background-text-style="dark" background-color="#ff0000" background-color-top="#00ff00" background-color-bottom="#0000ff" scroll-top="200rpx" page-style="color: gray" root-font-size="12px">
+  <navigation-bar title="test" loading="true" color-animation-duration="2000"></navigation-bar>
+</page-meta>
+
 <view>
   <cover-image src="https://cnk.one/favicon.png"></cover-image>
   <cover-view>cover-view</cover-view>
@@ -282,5 +286,25 @@
 </view>
 
 <view>
-  <video src="https://he.fib.one/media/friday.mp4"></video>
+  <video src="cloud://cloud1-7g2qao469851ba25.636c-cloud1-7g2qao469851ba25-1308630912/video/26802405-1-192.mp4"></video>
+</view>
+
+<view>
+  <map show-compass latitude="35.916" longitude="115.255"></map>
+</view>
+
+<view>
+  <canvas type="2d" id="myCanvas"></canvas>
+</view>
+
+<view>
+  <ad unit-id="" ad-intervals="30" ad-type="video"></ad>
+</view>
+
+<view>
+  <official-account></official-account>
+</view>
+
+<view class="avatar">
+  <open-data type="userAvatarUrl"></open-data>
 </view>
